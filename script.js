@@ -21,8 +21,9 @@ $('.download').on('click', function(){
 	$.ajax({
 		url: `${qrcode.src}`,
 		dataType: 'binary',
+		method: 'GET',
 		xhrFields: {
-			'responseType': 'blob'
+			responseType: 'blob'
 		},
 		success: function(data, status, xhr) {
 			var blob = new Blob([data], {type: xhr.getResponseHeader('Content-Type')});
